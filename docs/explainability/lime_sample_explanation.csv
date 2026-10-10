@@ -1,0 +1,21 @@
+candidate_name,job_role,actual_label,predicted_label,strong_probability,feature,weight,direction
+Candidate 1562,Cloud Engineer,Strong Match,Strong Match,39.53,CI,0.059703219727070767,Supports Strong Match
+Candidate 1562,Cloud Engineer,Strong Match,Strong Match,39.53,Networking,0.04136982836979058,Supports Strong Match
+Candidate 1562,Cloud Engineer,Strong Match,Strong Match,39.53,Microsoft,0.03703899868843893,Supports Strong Match
+Candidate 1562,Cloud Engineer,Strong Match,Strong Match,39.53,years,-0.03688384976784341,Supports Weak Match
+Candidate 1562,Cloud Engineer,Strong Match,Strong Match,39.53,approximately,-0.03356517602297488,Supports Weak Match
+Candidate 1562,Cloud Engineer,Strong Match,Strong Match,39.53,Kubernetes,0.03129501913431963,Supports Strong Match
+Candidate 1562,Cloud Engineer,Strong Match,Strong Match,39.53,Cloud,0.02711095985235159,Supports Strong Match
+Candidate 1562,Cloud Engineer,Strong Match,Strong Match,39.53,Terraform,-0.023671102042402737,Supports Weak Match
+Candidate 1562,Cloud Engineer,Strong Match,Strong Match,39.53,AWS,-0.021770697261536298,Supports Weak Match
+Candidate 1562,Cloud Engineer,Strong Match,Strong Match,39.53,Docker,-0.020458911076764133,Supports Weak Match
+Candidate 1562,Cloud Engineer,Strong Match,Strong Match,39.53,CD,0.0184909753386913,Supports Strong Match
+Candidate 1562,Cloud Engineer,Strong Match,Strong Match,39.53,cloud,0.01784715319787409,Supports Strong Match
+Candidate 1562,Cloud Engineer,Strong Match,Strong Match,39.53,Tech,-0.015878282967472613,Supports Weak Match
+Candidate 1562,Cloud Engineer,Strong Match,Strong Match,39.53,Technical,0.014041626986791926,Supports Strong Match
+Candidate 1562,Cloud Engineer,Strong Match,Strong Match,39.53,deployment,-0.013915113387356954,Supports Weak Match
+Candidate 1562,Cloud Engineer,Strong Match,Strong Match,39.53,on,-0.012759562005820768,Supports Weak Match
+Candidate 1562,Cloud Engineer,Strong Match,Strong Match,39.53,monitoring,-0.010841610589607933,Supports Weak Match
+Candidate 1562,Cloud Engineer,Strong Match,Strong Match,39.53,role,0.00985963748129603,Supports Strong Match
+Candidate 1562,Cloud Engineer,Strong Match,Strong Match,39.53,Certification,-0.009841009883714912,Supports Weak Match
+Candidate 1562,Cloud Engineer,Strong Match,Strong Match,39.53,Candidate,-0.008864736215357655,Supports Weak Match

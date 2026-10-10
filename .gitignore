@@ -1,0 +1,130 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ML artifacts
+*.joblib
+*.pkl
+*.pickle
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+
+# Node
+node_modules/
+.next/
+out/
+
+# Build
+dist/
+build/
+
+# Local databases and private uploads
+*.db
+*.sqlite
+*.sqlite3
+uploads/
+private/
+secrets/
+
+# Test and tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+coverage/
+htmlcov/
+
+# Frontend local environment files
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# Backend local environment files
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+
+# Virtual environments anywhere in the project
+**/venv/
+**/.venv/
+**/env/
+
+# Generated and private data
+**/__pycache__/
+**/.pytest_cache/
+*.db
+*.sqlite
+*.sqlite3
+
+# Resume uploads and sensitive files
+**/uploads/
+**/private/
+**/secrets/
+
+# Local candidate uploads and private data
+data/uploaded_candidates/
+uploads/
+private/
+secrets/
+
+# Virtual environments anywhere
+**/venv/
+**/.venv/
+**/env/
+
+# Frontend dependencies and generated builds
+**/node_modules/
+**/dist/
+**/build/
+
+# Python and test caches
+**/__pycache__/
+**/.pytest_cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+coverage/
+htmlcov/
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Local environment files
+.env
+.env.*
+!**/.env.example
+
+# Generated model artifacts (keep models local for now)
+*.joblib
+*.pkl
+*.pickle
+
+# Local API keys and secrets
+backend/ml/preprocessing/api.txt

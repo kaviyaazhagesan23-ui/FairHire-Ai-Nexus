@@ -1,0 +1,21 @@
+feature,shap_value,direction
+matched_skill_count,-0.17196042950453336,Supports Weak Match
+required_skill_count,-0.17196042950453336,Supports Weak Match
+docker ci,0.16143417467948482,Supports Strong Match
+experience_gap,-0.13686866308368012,Supports Weak Match
+experience_years,-0.13686866308368012,Supports Weak Match
+aws terraform,-0.10635945005923375,Supports Weak Match
+semantic_overlap,0.104472821280952,Supports Strong Match
+cloud kubernetes,0.07789535541370511,Supports Strong Match
+linux docker,-0.07366626753716367,Supports Weak Match
+monitoring platform,-0.06669871913399139,Supports Weak Match
+microsoft azure,0.06181489732463022,Supports Strong Match
+approximately years,-0.05997127988491687,Supports Weak Match
+cd azure,-0.055164258015168124,Supports Weak Match
+role administrator,0.05203169649447595,Supports Strong Match
+approximately 10,-0.04459305552343765,Supports Weak Match
+networking terraform,-0.044548660471700446,Supports Weak Match
+administrator technical,0.03949537257366551,Supports Strong Match
+tech cloud,-0.0391895715519432,Supports Weak Match
+approximately 12,-0.03874287964457917,Supports Weak Match
+12,-0.03874287964457917,Supports Weak Match
