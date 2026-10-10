@@ -64,7 +64,15 @@ const json = (data: unknown): RequestInit => ({
 
 export const liveApi = {
   health: () => request<HealthResponse>('/api/health', {}, 6000),
-  chat: (message: string) => request<ChatResponse>('/api/chat', json({ message }), 30000),
+ chat: (message: string, candidateId?: string) =>
+  request<ChatResponse>(
+    '/api/chat',
+    json({
+      message,
+      ...(candidateId ? { candidate_id: candidateId } : {}),
+    }),
+    30000
+  ),
   getCandidate: (id: string) => request<Candidate>(`/api/candidate/${encodeURIComponent(id)}`),
   
 compare: (candidate_ids: string[]) =>
