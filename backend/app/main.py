@@ -63,6 +63,7 @@ class CandidateCompareRequest(BaseModel):
     candidate_ids: list[str]
 class ChatRequest(BaseModel):
     message: str
+    candidate_id: str | None = None
 @app.post("/api/predict")
 def predict_resume(request: CandidatePredictionRequest):
     result = predict_candidate(
@@ -479,6 +480,7 @@ async def predict_uploaded_resume(
             status_code=500,
             detail=f"Resume prediction failed: {str(exc)}"
         )
+
 @app.post("/api/chat")
 def chat_with_hr_assistant(request: ChatRequest):
     message = request.message.strip()
@@ -495,6 +497,55 @@ def chat_with_hr_assistant(request: ChatRequest):
             detail="Message cannot exceed 1000 characters.",
         )
 
+    candidate_id = (
+        request.candidate_id.strip()
+        if request.candidate_id
+        else None
+    )
+
+    # Uploaded resume: use the actual saved candidate record.
+    if candidate_id and candidate_id.startswith("UP-"):
+        candidate = get_uploaded_candidate_by_id(candidate_id)
+
+        if candidate is None:
+            raise HTTPException(
+                status_code=404,
+                detail="Uploaded candidate not found.",
+            )
+
+        context = (
+            f"Candidate ID: {candidate.get('candidate_id')}\n"
+            f"Source: Uploaded resume\n"
+            f"Filename: {candidate.get('filename')}\n"
+            f"Candidate details: {candidate.get('candidate')}\n"
+            f"Job details: {candidate.get('job')}\n"
+            f"Prediction: {candidate.get('prediction')}\n"
+            f"Evaluation: {candidate.get('evaluation')}\n"
+        )
+
+        try:
+            answer = generate_hr_answer(
+                message=message,
+                candidate_context=context,
+            )
+            return {
+                "answer": answer,
+                "candidate_ids": [candidate_id],
+                "intent": "hr_assistant",
+            }
+        except RuntimeError as exc:
+            raise HTTPException(status_code=503, detail=str(exc))
+        except Exception:
+            import logging
+            logging.getLogger(__name__).exception(
+                "Uploaded candidate chat failed"
+            )
+            raise HTTPException(
+                status_code=502,
+                detail="AI response failed. Check the backend terminal.",
+            )
+
+    # Preserve existing synthetic-candidate chatbot behavior.
     return answer_chat(message)
 
 
