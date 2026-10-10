@@ -15,10 +15,10 @@ import { cx } from '../lib/utils'
 interface Msg { id: string; role: 'user' | 'ai'; text: string; ids?: string[]; intent?: string; error?: boolean; retry?: string }
 
 const prompts = [
-  { emoji: '🔍', text: 'Show Candidate 1562.' },
-  { emoji: '🎯', text: 'What skills is Candidate 1728 missing?' },
-  { emoji: '💡', text: 'What are the strengths of Candidate 1728?' },
-  { emoji: '🏆', text: 'Compare Candidate 1562 with Candidate 1728.' },
+  { emoji: '🔍', text: 'Show all candidates and their screening results.' },
+  { emoji: '🎯', text: 'What skills are candidates missing for their target roles?' },
+  { emoji: '💡', text: 'What are the key strengths of each candidate?' },
+  { emoji: '🏆', text: 'Compare candidates based on skills, experience, and job fit.' },
 ]
 const MAX = 1000 // backend limit for /api/chat
 let seq = 0
@@ -59,7 +59,9 @@ export default function Recruiter() {
     setInput('')
     setPending(true)
     try {
-      const r = await api.chat(text)
+      
+      const uploadedId = text.match(/\bUP-[A-Za-z0-9_-]+\b/i)?.[0]
+const r = await api.chat(text, uploadedId)
       const id = uid()
       setMsgs((m) => [...m, { id, role: 'ai', text: r.answer, ids: r.candidate_ids, intent: r.intent }])
       flashSuccess()
